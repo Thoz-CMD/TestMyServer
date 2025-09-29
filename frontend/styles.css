@@ -1,0 +1,201 @@
+/* สิ่งที่อยู่ตรงนี้ จะมีไว้แค่ให้ dev อ่าน */
+/* 1. แต่งใคร ? (id, class, DOM) 2. แต่งอะไร ? */
+
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+/* set ค่าหน้าจอ */
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+  .header{
+    font-size: 24px;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+/* set หน้าเว็ป */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+/* set body พื้นหลัง*/
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(1000deg,#25CCF7,#1B9CFC);
+}
+
+/* เพิ่มความยืดหยุ่น */
+.flex {
+  display: flex;
+}
+
+/* จัดวางให้อยู่ตรงกลาง */
+.center {
+  text-align: center;
+}
+
+/* ตั้งค่ากล่อง masdsge */
+.message {
+  background-color: lightgray;
+  padding: 20px;
+  padding-left: 50px;
+  margin: 0px;
+  display: none;
+}
+
+.message.success {
+  background-color: lightgreen;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.message.danger {
+  background-color: lightcoral;
+  display: block;
+  margin: 0;
+  padding: 20px;
+  padding-left: 50px;
+  border-radius: 10px;
+}
+
+/* ตกแต่งฟอร์ม */
+.container {
+  font-size: 1.5rem;
+  position: relative;
+  background-image: linear-gradient(90deg,#dfe4ea,#c2d9f5);
+  width: 35%;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ตกแต่งส่วนหัวของฟอร์ม */
+.header {
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  background: #333;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* set logo */
+#logo {
+  font-size: 10rem;
+  color: #333;
+  margin-bottom: 40px;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ตกแต่ง กล่อง input */
+.form-input {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  background: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* set ตัว span */
+.form-input span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 3%;
+  top: 32%;
+  color: #93989c;
+  transition: .5s;
+  opacity: 1;
+}
+
+/* ตกแต่งข้อความ input */
+.form-input input[type="text"],
+.form-input input[type="number"]
+{
+  position: absolute;
+  height: 50px;
+  width: 95%;
+  border: none;
+  font-size: 2rem;
+  outline: none;
+  background: transparent;
+  z-index: 1;
+  color: #333;
+  margin-left: 14px;
+  top: 10px;
+}
+
+/* ตกแต่งเพศและสิ่งที่สนใจ */
+.header-forms {
+  margin-left: 1vw; /* เปลี่ยนจาก px เป็น vw */
+}
+
+.form-input input[type="radio"] {
+  margin-left: 3.5vw; /* เปลี่ยนจาก px เป็น vw */
+}
+
+/* .form-input input[type="checkbox"] {
+/* เปลี่ยนจาก px เป็น vw */
+
+
+
+/* ตกแต่งคำอธิบายเพิ่มเติม */
+.form-input textarea {
+  position: absolute;
+  height: 50px;
+  width: 96.6%;
+  border: none;
+  font-size: 2rem;
+  outline: none;
+  background: transparent;
+  z-index: 1;
+  color: #333;
+  margin-left: 14px;
+  top: 15px;
+}
+
+/* ตกแต่งปุ่ม ส่งข้อมูล*/
+.button {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-top: 5%;
+  background-image: linear-gradient(1000deg,#5cf93d,#057f1d);
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049; /* เขียวเข้ม */
+}
+
+/* ตกแต่งลิ้งค์ management */
+.management {
+  font-size: 15px;
+  margin-top: 5%;
+  
+}

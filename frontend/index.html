@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ลงทะเบียนผู้ใช้ | Minimal</title>
+  <link rel="stylesheet" href="minimal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <div class="wrapper stack" style="padding-top:2.5rem;">
+    <header class="min-header">
+      <div class="min-brand">ลงทะเบียนผู้ใช้</div>
+      <nav class="actions">
+        <a href="user.html" class="btn secondary" title="จัดการผู้ใช้"><i class="fa-solid fa-users"></i> ผู้ใช้</a>
+      </nav>
+    </header>
+
+    <section class="min-card shadow" aria-labelledby="formTitle">
+      <h2 id="formTitle" class="mt-0">ข้อมูลผู้ใช้</h2>
+      <p class="muted" style="margin-top:-.25rem;">กรอกข้อมูลให้ครบทุกช่องก่อนกดบันทึก</p>
+      <form id="userForm" novalidate class="stack" style="gap:1.75rem;">
+        <div class="form-grid">
+          <div class="field">
+            <label for="firstname">ชื่อจริง</label>
+            <input id="firstname" name="firstname" class="input" type="text" autocomplete="given-name" />
+            <div class="error-text" data-err="firstname"></div>
+          </div>
+          <div class="field">
+            <label for="lastname">นามสกุล</label>
+            <input id="lastname" name="lastname" class="input" type="text" autocomplete="family-name" />
+            <div class="error-text" data-err="lastname"></div>
+          </div>
+          <div class="field">
+            <label for="age">อายุ</label>
+            <input id="age" name="age" class="input" type="number" min="0" max="120" inputmode="numeric" />
+            <div class="error-text" data-err="age"></div>
+          </div>
+          <div class="field">
+            <label>เพศ</label>
+            <div class="inline-field-row" role="radiogroup" aria-label="Gender">
+              <label class="option-chip"><input type="radio" name="gender" value="ชาย" /><span>ชาย</span></label>
+              <label class="option-chip"><input type="radio" name="gender" value="หญิง" /><span>หญิง</span></label>
+              <label class="option-chip"><input type="radio" name="gender" value="ไม่ระบุ" /><span>ไม่ระบุ</span></label>
+            </div>
+            <div class="error-text" data-err="gender"></div>
+          </div>
+          <div class="field" style="grid-column:1 / -1;">
+            <label>สิ่งที่สนใจ</label>
+            <div class="inline-field-row" aria-label="Interests" style="flex-wrap:wrap; gap:.5rem .75rem;">
+              <label class="option-chip"><input type="checkbox" name="interest" value="หนังสือ" /><span>หนังสือ</span></label>
+              <label class="option-chip"><input type="checkbox" name="interest" value="วิดีโอเกม" /><span>วิดีโอเกม</span></label>
+              <label class="option-chip"><input type="checkbox" name="interest" value="การเมือง" /><span>การเมือง</span></label>
+              <label class="option-chip" id="otherInterestChip"><input type="checkbox" name="interest_other_toggle" value="__OTHER__" /><span>อื่นๆ</span></label>
+            </div>
+            <div id="otherInterestWrapper" class="stack" style="margin-top:.6rem; display:none; max-width:22rem;">
+              <input id="otherInterestInput" name="interest_other_value" class="input" type="text" placeholder="พิมพ์ความสนใจอื่น (คั่นด้วย , หากหลายรายการ)" />
+              <div class="muted" style="font-size:.65rem; line-height:1.3;">ตัวอย่าง: ดนตรี, กีฬา, ทำอาหาร</div>
+            </div>
+            <div class="error-text" data-err="interests"></div>
+          </div>
+          <div class="field" style="grid-column:1 / -1;">
+            <label for="description">คำอธิบายเพิ่มเติม</label>
+            <textarea id="description" name="description" class="input" placeholder=""></textarea>
+            <div class="error-text" data-err="description"></div>
+          </div>
+        </div>
+        <div id="summaryErrors" class="error-text" style="display:none;"></div>
+        <div class="actions">
+          <button type="button" id="submitBtn" class="btn"><i class="fa-solid fa-floppy-disk"></i><span id="submitBtnLabel">บันทึก</span></button>
+          <button type="reset" id="resetBtn" class="btn ghost"><i class="fa-solid fa-rotate-left"></i> ล้าง</button>
+        </div>
+      </form>
+    </section>
+    <footer style="text-align:center; font-size:.65rem; color:#777; margin-top:2rem;">minimal ui v1 • monochrome • responsive</footer>
+  </div>
+
+  <div class="toast-layer" id="toastContainer"></div>
+  <div id="modalHost"></div>
+  <div id="loadingHost" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script type="module" src="config.js"></script>
+  <script type="module" src="ui.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+</html>
