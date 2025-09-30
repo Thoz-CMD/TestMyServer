@@ -1,4 +1,4 @@
-# โปรเจ็คส่วนตัว ปี 3 (2024)
+# โปรเจ็คในวิชาเรียนปี 3 (2024)
 # Minimal User Registry API & UI (Express + MySQL)
 
 ![Architecture Banner](Review/R1.png)
